@@ -44,4 +44,4 @@ All code is reviewed before pushed into Prod.
 
 License and Authors
 -------------------
-Authors: EZ Bardeguez @ Rising Tide Games / Zynga
+Authors: EZ Bardeguez 
