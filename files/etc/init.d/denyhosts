@@ -1,0 +1,61 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          <NAME>
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Description:        Denyhosts Daemon.
+### END INIT INFO
+ 
+SCRIPT="/opt/denyhosts/bin/denyhosts_ctl"
+RUNAS="root"
+NAME="denyhosts"
+PIDFILE="/var/lock/subsys/$NAME"
+ 
+start() {
+  if [ -f "$PIDFILE" ];then
+    echo "${NAME} Service already running" >&2
+    return 1
+  fi
+  echo 'Starting service…' >&2
+  local CMD="$SCRIPT start"
+  su -c "$CMD" $RUNAS
+  echo "${NAME} Service started" >&2
+}
+ 
+stop() {
+  if [ ! -f "$PIDFILE" ]; then
+    echo "${NAME} Service not running" >&2
+    return 1
+  fi
+  echo 'Stopping service…' >&2
+  local CMD="$SCRIPT stop"
+  su -c "$CMD" $RUNAS
+  echo "${NAME} Service stopped" >&2
+}
+ 
+status() {
+ if [ ! -f "$PIDFILE" ]; then
+    echo "${NAME} Service not running" >&2
+    return 1
+  fi
+  local CMD="$SCRIPT status"
+  su -c "$CMD" $RUNAS
+}
+ 
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  status)
+    status
+    ;;
+  restart)
+    stop
+    start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|status}"
+esac

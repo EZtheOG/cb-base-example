@@ -1,0 +1,33 @@
+# This file is managed by chef 
+# Config is for DenyHosts
+
+HOSTS_DENY                            = <%= node['denyhosts']['hosts_deny'] %>
+BLOCK_SERVICE                         = <%= node['denyhosts']['block_service'] %>
+WORK_DIR                              = <%= node['denyhosts']['work_dir'] %>
+SUSPICIOUS_LOGIN_REPORT_ALLOWED_HOSTS = <%= node['denyhosts']['suspicious_login_report'] %>
+LOCK_FILE                             = <%= node['denyhosts']['lock_file'] %>
+SECURE_LOG                            = <%= node['denyhosts']['secure_log'] %>
+DENY_THRESHOLD_INVALID                = <%= node['denyhosts']['threshold_invalid'] %>
+DENY_THRESHOLD_VALID                  = <%= node['denyhosts']['threshold_valid'] %>
+DENY_THRESHOLD_ROOT                   = <%= node['denyhosts']['threshold_root'] %>
+DENY_THRESHOLD_RESTRICTED             = <%= node['denyhosts']['threshold_restricted'] %>
+HOSTNAME_LOOKUP                       = <%= node['denyhosts']['hostname_lookup'] %>
+SYSLOG_REPORT                         = <%= node['denyhosts']['syslog_report'] %>
+AGE_RESET_VALID                       = <%= node['denyhosts']['age_reset_valid'] %>
+AGE_RESET_ROOT                        = <%= node['denyhosts']['age_reset_root'] %>
+AGE_RESET_INVALID                     = <%= node['denyhosts']['age_reset_invalid'] %>
+RESET_ON_SUCCESS                      = <%= node['denyhosts']['reset_on_success'] %>
+DAEMON_LOG                            = <%= node['denyhosts']['daemon_log'] %>
+DAEMON_SLEEP                          = <%= node['denyhosts']['daemon_sleep'] %>
+DAEMON_PURGE                          = <%= node['denyhosts']['daemon_purge'] %>
+DAEMON_LOG                            = <%= node['denyhosts']['daemon_log'] %>
+DAEMON_LOG_TIME_FORMAT                = <%= node['denyhosts']['daemon_log_time_format'] %>
+DAEMON_LOG_MESSAGE_FORMAT             = <%= node['denyhosts']['daemon_log_message_format'] %>
+PURGE_DENY                            = <%= node['denyhosts']['purge_deny'] %>
+PURGE_THRESHOLD                       = <%= node['denyhosts']['purge_threshold'] %>
+SYNC_SERVER                           = <%= node['denyhosts']['sync_server'] %>
+SYNC_INTERVAL                         = <%= node['denyhosts']['sync_interval'] %>
+SYNC_UPLOAD                           = <%= node['denyhosts']['sync_upload'] %>
+SYNC_DOWNLOAD                         = <%= node['denyhosts']['sync_download'] %>
+SYNC_DOWNLOAD_THRESHOLD               = <%= node['denyhosts']['sync_download_threshold'] %>
+SYNC_DOWNLOAD_RESILIENCY              = <%= node['denyhosts']['sync_download_resiliency'] %>

@@ -1,0 +1,2 @@
+# File Maintained by puppet. Do Not Edit Manually
+%devs ALL=(ALL) NOPASSWD:DEVCMDS, NETWORKCMDS

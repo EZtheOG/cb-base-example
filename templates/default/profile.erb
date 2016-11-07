@@ -1,0 +1,86 @@
+# Managed by puppet - do not modify!
+
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
+alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
+alias vim='/bin/vi'
+for i in `ls /etc/profile.d/*.sh`; do
+    source $i
+done
+
+# User specific environment and startup programs
+unset USERNAME
+
+export PATH="<%= node['sudo']['sudoers']['env_path'] %>"
+
+alias ll='ls $LS_OPTIONS -l'
+alias lh='ls $LS_OPTIONS -lh'
+alias l='ls $LS_OPTIONS -lA'
+alias rm='rm -i'
+alias diskspace="du -S | sort -n -r |more"
+alias folders="find . -maxdepth 1 -type d -print | xargs du -sk | sort -rn"
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias mkdir='mkdir -pv'
+
+up(){
+  local d=""
+  limit=$1
+  for ((i=1 ; i <= limit ; i++))
+    do
+      d=$d/..
+    done
+  d=$(echo $d | sed 's/^\///')
+  if [ -z "$d" ]; then
+    d=..
+  fi
+  cd $d
+}
+
+export EDITOR=/bin/vi
+export BLOCKSIZE=1k
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+lsnet(){ 
+        lsof -i  | awk '{printf("%-14s%-20s%s\n", $10, $1, $9)}' | sort 
+}
+
+rn(){
+  ps ax | grep -i "${1}" | awk ' \
+  $0 !~ /grep/ { count++; pids[count] = $1} \
+  END { \
+    for( idx in pids ) print " +5", pids[idx]; \
+  }' | xargs renice -n 
+}
+
+# prompt functions
+default(){
+  export PS1="\e[01;32m[\!] \[\e[00m\][\u@\h \W]\\$ "
+}
+short(){
+  export PS1="\[\033[0;33m\][\!] \[\e[00m\]$ "
+}
+shortalt(){
+  export PS1="\[\033[0;33m\][\!] \[\033[0;32m\][\t] $ \[\e[00m\] "
+}
+hist(){
+  export PS1="[\!] [\t] [\u@\H]$ "
+}
+longcolor(){
+  export PS1="\033[36m\][\w]\[\033[0m\n\[\033[36m\][\t] \[\e[35;1m\][\u\[\033[0m\]@\[\e[35;1m\]\H] \[\e[0m\]\`if [ \$? = 0 ]; then echo -e '\e[01;32m:)'; else echo -e '\e[01;31m:('; fi\` \[\e[01;34m\]\[\e[00m\]$ "
+}
+longnocolor(){
+  export PS1="[\w]\n\[[\t] [\u@\H] \`if [ \$? = 0 ]; then echo -e '\e[01;32m:)'; else echo -e '\e[01;31m:('; fi\` \[\e[01;34m\]\[\e[00m\]$ "
+}
+longcoloralt(){
+  export PS1="\[\033[36m\][\t] \[\e[35;1m\][\u\[\033[0m\]@\[\e[35;1m\]\H] \[\e[0m\] \[\033[36m\][\w]\[\033[0m\] \`if [ \$? = 0 ]; then echo -e '\e[01;32m:)'; else echo -e '\e[01;31m:('; fi\` \[\e[01;34m\]\[\e[00m\]$ "
+}
+color(){
+  export PS1="\[\033[0;33m\][\!]\`if [[ \$? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u.\h: \`if [[ `pwd|wc -c|tr -d " "` > 18 ]]; then echo "\\W"; else echo "\\w"; fi\`]\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"
+}
+default

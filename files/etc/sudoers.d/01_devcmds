@@ -1,0 +1,2 @@
+# File Maintained by chef. Do Not Edit Manually
+Cmnd_Alias DEVCMDS = /etc/init.d/passenger, /etc/init.d/mysql, /etc/init.d/apache, !/usr/bin/sudo,!/bin/su,!/bin/vi /etc/sudoers,!/usr/sbin/visudo,!/bin/bash,!/bin/csh,!/bin/ksh,!/bin/sh,!/bin/tcsh,!/bin/zsh

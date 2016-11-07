@@ -1,0 +1,39 @@
+Port 22
+Protocol 2
+
+PermitRootLogin no
+StrictModes yes
+AllowTcpForwarding yes
+GatewayPorts yes
+TCPKeepAlive yes
+UsePam yes
+ClientAliveInterval 0
+ClientAliveCountMax 0
+PermitEmptyPasswords no
+PermitTunnel yes
+PasswordAuthentication no
+PubKeyAuthentication yes
+DSAAuthentication no
+IgnoreRhosts yes
+LogLevel INFO
+X11Forwarding no
+AllowTcpForwarding yes
+UsePrivilegeSeparation yes
+AllowAgentForwarding yes
+MaxSessions 20
+LoginGraceTime 30
+Ciphers 3des-cbc,aes256-ctr,aes192-ctr,aes128-ctr,arcfour256
+UseDNS no
+AuthorizedKeysFile .ssh/authorized_keys
+PrintMotd no
+PrintLastLog yes
+PidFile /var/run/sshd.pid
+
+# Banner
+Banner /etc/motd
+
+# Accept locale-related environment variables
+AcceptEnv LANG LC_CTYPE LC_NUMERIC LC_TIME LC_COLLATE LC_MONETARY LC_MESSAGES
+AcceptEnv LC_PAPER LC_NAME LC_ADDRESS LC_TELEPHONE LC_MEASUREMENT
+AcceptEnv LC_IDENTIFICATION LC_ALL LANGUAGE
+AcceptEnv XMODIFIERS
