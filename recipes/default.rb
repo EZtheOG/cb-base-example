@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: base
+# Cookbook Name:: cb-base-exmaple
 # Recipe:: default
 #
-# Copyright 2016, YOUR_COMPANY_NAME
+# Copyright 2016, EZtheOG
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -33,9 +33,6 @@ include_recipe "cb-base::sudoers"
 
 log "Setting NTP"
 include_recipe "cb-base::ntp"
-
-log "Setting DenyHosts"
-include_recipe "cb-base::denyhosts"
 
 log "Setting up Logrotate files"
 include_recipe "cb-base::logrotate"
