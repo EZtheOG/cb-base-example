@@ -1,2 +1,2 @@
-# sudoers::sensu::client - This file is maintained by puppet
+# sudoers::sensu::client - This file is maintained by Chef
 sensu ALL=(ALL) NOPASSWD:ALL
