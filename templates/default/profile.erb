@@ -1,4 +1,4 @@
-# Managed by puppet - do not modify!
+# Managed by Chef - do not modify!
 
 # .bash_profile
 
