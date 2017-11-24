@@ -1,12 +1,3 @@
-#
-# Cookbook Name:: base
-# Recipe:: user-admins
-#
-# Copyright 2016, Company
-#
-# All rights reserved - Do Not Redistribute
-#
-
 # Groups 
 group 'admins' do
     gid 25
