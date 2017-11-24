@@ -1,2 +1,2 @@
-# File Maintained by puppet. Do Not Edit Manually
+# File Maintained by Chef. Do Not Edit Manually
 %admins ALL=(ALL) NOPASSWD:ALL
