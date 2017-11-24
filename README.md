@@ -1,6 +1,8 @@
-base Cookbook
+A Base Cookbook
 =============
-TODO: This is the base cookbook for every node. This will install every package, user, sudo access, denyhosts, etc. that everynode will be using. Also, there are recipes in here that create users and you can call them from other cookbooks by calling ```cb-base::users-dev``` e.g.
+This is the base cookbook for every node in your infrastructure. This will install every package, user, sudo access, denyhosts, etc. that everynode will be using. Also, there are recipes in here that create users and you can call them from other cookbooks by calling ```cb-base::users-dev``` e.g.
+
+At this time - this cookbook is written for the AWS Centos Environment.
 
 Requirements
 ------------
@@ -17,8 +19,7 @@ depends 'chef-client'
 
 ### Will need to add Sensu client as well along with other collectors.
 
-This cookbook is tested and is working on Amazon CentOS based architecture. Debian is not supported. Moving to Deb arch will create such a big headache for no productive reason.
-
+This cookbook is tested and is working on Amazon CentOS based architecture. 
 
 
 Attributes
@@ -41,6 +42,8 @@ Contributing
 6. Submit a Pull Request using Github
 
 All code is reviewed before pushed into Prod.
+
+If you want to fork this as a springboard into your cookbook, please do! 
 
 License and Authors
 -------------------
