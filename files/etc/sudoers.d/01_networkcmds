@@ -1,2 +1,2 @@
-# File Maintained by puppet. Do Not Edit Manually
+# File Maintained by Chef. Do Not Edit Manually
 Cmnd_Alias NETWORKCMDS = /bin/netstat, /usr/sbin/ifconfig, /usr/sbin/arp, /usr/sbin/tcpdump, /usr/sbin/iptables --list, /bin/traceroute
