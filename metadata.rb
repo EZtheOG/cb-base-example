@@ -1,8 +1,8 @@
 name             'cb-base'
-maintainer       'SMN DevOps'
-maintainer_email 'administrator@smndevops.com'
+maintainer       'EZ Bardeguez'
+maintainer_email 'ez.bardeguez@gmail.com'
 license          'All rights reserved'
-description      'Installs/Configures base'
+description      'Installs/Configures base cookbook'
 version          '1.0.1'
 
 depends 'ntp'
